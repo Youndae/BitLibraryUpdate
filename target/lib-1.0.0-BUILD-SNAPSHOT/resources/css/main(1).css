@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+
+/* 상단공지 */
+.closeBox > div{width:auto;margin:0 20px;}
+.topInfo .infoList{padding:23px 20px;background-size:cover;}
+.topInfo .infoList > div{width:auto;}
+.topInfo .infoList ul li{float:none;max-width:100%;margin-left:0;}
+
+div#divHeader{padding-top:95px;}
+.headerTop{background:url(../../../../image/ko/local/topBgT.jpg) no-repeat center center;}
+.headerTop .header1{width:auto;height:84px;margin:0 20px;}
+#divTopMenu{width:auto;}
+#divTopMenu > ul{display:none;}
+#divTopMenu .allMenuBtn{margin-top:30px;background-size:27px 21px;}
+.headerBtm{overflow:visible;border-bottom:none;}
+.headerBtm > div{width:auto;margin:0 20px;}
+.headerBtm h2.logo{top:-202px;width:197px;height:59px;}
+#globalMenu{margin-top:-205px;}
+#globalMenu > ul.log{margin-top:20px;}
+#globalMenu > ul.log > li:first-child{float:left;}
+#globalMenu > ul > li.easyView{display:none;}
+.headerTop .header1 h1.logo{display:none!important;}
+.headerTop .header1 .topSrch{display:none!important;}
+#divSearch{width:auto;margin:0 20px;}
+
+/* 요약정보 */
+.divMyMenu .myMenu{top:-124px;z-index:200;}
+.myMenu > div{margin-right:0;padding:21px 74px 21px 21px;}
+.myMenu .myInfo{float:none;width:auto;margin-right:0;}
+.myMenu ul.myMenuList{float:none;width:auto;margin-top:20px;}
+
+#divContents{background:none;}
+.contents1{border-top:none;}
+
+/* 전체메뉴 */
+.wholeMenu{display:block!important;right:-100%;background:none;}
+.wholeMenu > div{width:100%;height:100%;margin:0;padding:0;}
+.wholeMenu > div h2{display:none;}
+.wholeMenu > div > div{height:100%;margin-top:0;margin-left:110px;background-color:#f3f4f4;}
+.wholeMenu > div > div .mobileTop{display:block;padding:30px 0 35px;color:#fff;font-size:16px;background-color:#035691;}
+.wholeMenu > div > div .mobileTop p{display:inline-block;margin:0 30px;padding-left:22px;background:url(../../../../image/ko/local/welcomeTbg.png) no-repeat left center;background-size:15px 18px;}
+.wholeMenu > div > div > ul{position:relative;min-height:880px;background-color: #f3f4f4;}
+.wholeMenu > div > div > ul > li{float:none;width:auto!important;margin:0;}
+.wholeMenu > div > div > ul > li > p{width:190px;height:110px;cursor:pointer;}
+.wholeMenu > div > div > ul > li.on > p{background-color:#fff!important;}
+.wholeMenu > div > div > ul > li.on > p .txt{background-color:#fff!important;}
+.wholeMenu > div > div > ul > li > p .txt{height:auto;line-height:18px;color:#303030!important;font-size:17px;background:none;background-repeat:no-repeat;}
+.wholeMenu > div > div > ul > li.wholeMenu1 > p .txt{padding-top:72px;background-image:url(../../../../image/ko/local/wholeMenuIco1.png);background-size:62px 36px;background-position:center 20px;}
+.wholeMenu > div > div > ul > li.wholeMenu2 > p .txt{padding-top:80px;background-image:url(../../../../image/ko/local/wholeMenuIco2.png);background-size:42px 53px;background-position:center 15px;}
+.wholeMenu > div > div > ul > li.wholeMenu3 > p .txt{padding-top:75px;background-image:url(../../../../image/ko/local/wholeMenuIco3.png);background-size:57px 45px;background-position:center 18px;}
+.wholeMenu > div > div > ul > li.wholeMenu4 > p .txt{padding-top:78px;background-image:url(../../../../image/ko/local/wholeMenuIco4.png);background-size:54px 45px;background-position:center 19px;}
+.wholeMenu > div > div > ul > li.wholeMenu5 > p .txt{padding-top:78px;background-image:url(../../../../image/ko/local/wholeMenuIco5.png);background-size:57px 44px;background-position:center 20px;}
+.wholeMenu > div > div > ul > li.wholeMenu6 > p .txt{padding-top:78px;background-image:url(../../../../image/ko/local/wholeMenuIco6.png);background-size:54px 53px;background-position:center 16px;background-color:#f3f4f4;}
+.wholeMenu > div > div > ul > li.wholeMenu7 > p .txt{padding-top:78px;background-image:url(../../../../image/ko/local/wholeMenuIco7.png);background-size:48px 47px;background-position:center 16px;background-color:#f3f4f4;}
+.wholeMenu > div > div > ul > li.wholeMenu8 > p .txt{padding-top:74px;background-image:url(../../../../image/ko/local/wholeMenuIco8.png);background-size:41px 41px;background-position:center 24px;background-color:#f3f4f4;}
+.wholeMenu > div > div > ul > li .mobileTxt{display:block;padding:20px 0 10px;color:#2b2b2b;font-size:19px;font-family:NotoSansKRM;border-bottom:2px solid #00538e;}
+.wholeMenu > div > div > ul > li > div{display:none;position:absolute;left:190px;top:0;right:0;height:100%;margin:0;padding:0 30px 0 27px;background-color:#fff;z-index:50;}
+.wholeMenu > div > div > ul > li > div > ul{border-bottom:1px solid #d7d7d7;}
+.wholeMenu > div > div > ul > li.on > div{display:block;}
+.wholeMenu .list > ul > li{margin-top:0;border-top:1px solid #dcdcdc;}
+.wholeMenu .list > ul > li:first-child{border-top: none;}
+.wholeMenu .list > ul > li > ul > li{margin-top:10px;padding-left:0;background:none;}
+.wholeMenu .list > ul > li > ul > li:first-child{margin-top:0;}
+.wholeMenu .list > ul > li > ul > li > a{font-size:17px;color:#909090;}
+.wholeMenu .list > ul > li > ul > li a:hover{text-decoration:none;}
+.wholeMenu > div > div > ul > li > div > ul > li > p{position:relative;padding:13px 20px 14px;color:#555!important;font-size:18px;cursor:pointer;}
+.wholeMenu > div > div > ul > li > div > ul > li > p .arrow{display:block;position:absolute;right:14px;top:50%;width:13px;height:22px;margin-top:-11px;background-image:url(../../../../image/ko/local/menuArrowSprite.png);background-repeat:no-repeat;background-position:0 0;-webkit-transition:background-position .25s ease-in-out;transition:background-position .25s ease-in-out;}
+.wholeMenu > div > div > ul > li > div > ul > li.on > p .arrow{background-position:-13px -2px;-webkit-transition:background-position .25s ease-in-out;transition:background-position .25s ease-in-out;}
+.wholeMenu > div > div > ul > li > div > ul > li > ul{display:none;padding:18px 20px 20px;border-top:1px solid #dcdcdc;}
+.wholeMenu > div .close{width:26px;height:27px;top:28px;right:20px;background:url(../../../../image/ko/local/menuClose.png) no-repeat 0 0;background-size:26px 27px;}
+
+/* Contents1 */
+.contents1 > div{width:auto;margin:0;padding:0;}
+.contents1 > div > div{float:none;}
+.quickMenu{width:auto;margin:0;}
+.quickMenu > ul{width:auto;height:auto;}
+.quickMenu > ul li{width:16.6%;margin-left:0;}
+.quickMenu > ul li a .icon{width:auto;height:auto;}
+.closedInfo{position:relative;margin-top:30px;background-color:#f7f7f7;border-top:1px solid #d5d5d5;}
+.closedInfo > div{margin:0 20px;padding-bottom:25px;}
+.closedInfo .divInfo1{position:static;padding-top:20px;}
+.closedInfo .divInfo1 .viewCalendar{position:absolute;right:0;top:0;}
+.closedInfo .divInfo1 .btnW{width:147px;top:22px;}
+.closedInfo .divInfo2{margin:0}
+.closedInfo .divInfo2 .markInfo{height:94px;margin-top:15px;}
+.closedInfo .divInfo2 .markInfo > ul{height:25px;padding:8px 20px;text-align:center;border-top:1px solid #c6c8ce;border-bottom:1px solid #c6c8ce;}
+.closedInfo .divInfo2 .markInfo > ul li{display:inline-block;float:none;width:16%;margin-right:0;}
+.closedInfo .divInfo2 .markInfo li > a{display:block;border:none;text-align:center;}
+.closedInfo .divInfo2 .markInfo ul li > .dateW{top:86px;}
+.closedInfo .moreViewW{display:block;}
+.closedInfo .divInfo2 .markInfo ul li .dateList > ul > li{width:6%;text-align: center;}
+
+/* Contents2 */
+.contents2 > div{width:auto;margin:0 20px;}
+.book{width:52%;}
+.book .bookList{width:auto;margin:0 20px;}
+.book .bookList ul li{width:12.25%;margin-right:0;}
+.book > ul > li > a{padding:0 7px;font-size:18px;letter-spacing:-1px}
+.popupZone{float:right;width:43%;}
+.book > ul > li > div .moreView{width:30px;height:30px;top:-68px;}
+
+/* Contents3 */
+.contents3{padding:20px 20px 24px;}
+.contents3 > div{width:auto;}
+.libService > ul{width:50%;}
+.libService > ul.list1 li{width:20%;}
+.libService > ul.list2{margin-left:0;}
+.libService > ul.list2 li{width:25%;margin-left:0;padding:0;}
+.libService > ul > li a{font-size:13px;letter-spacing:-1px}
+
+/* Contents4 */
+.contents4 > div{width:auto;margin:0 20px;}
+.notice{width:50%;}
+.notice > ul > li{width:17.68%;}
+.notice > ul > li > a{padding:0 7px;font-size:15px;letter-spacing:-1px}
+.news{width:45%;}
+.news .news1 p span{font-size:25px;}
+.news .news2 p span{font-size:25px;}
+@media screen and (min-width:768px) and (max-width:960px){
+	.notice{float:none;width:auto;overflow: hidden;}
+	.news{float:none;width:auto;margin-left:0;margin-top:30px;}
+	.news > div{background-size:cover;}
+}
+@media screen and (min-width:810px) and (max-width:960px){
+	.notice > ul > li{width:19%;}
+}
+@media screen and (min-width:768px) and (max-width:811px){
+	.notice > ul > li{width:18.48%;}
+}
+
+/* Contents5 */
+.contents5 > div{width:auto;margin:0;}
+.cultureProgram{margin:0 20px;}
+.slick-slide {margin:0 10px;}
+.programList .slick-prev{left:0;z-index:10;}
+.programList .slick-next{right:-6px;z-index:10;}
+/*
+.programList .divList.slick-current .draw{color: #fbac4d;}
+.programList .divList.slick-current .draw::before, .programList .divList.slick-current .draw::after {width: 100%;height: 100%;}
+.programList .divList.slick-current .draw::before {border-top-color: #fbac4d;border-right-color: #fbac4d;transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;}
+.programList .divList.slick-current .draw::after {border-bottom-color: #fbac4d;border-left-color: #fbac4d;transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;}
+.programList .divList.slick-current .meet{color: #fbac4d;}
+.programList .divList.slick-current .meet::before {border-top-color: #fbac4d;border-right-color: #fbac4d;}
+.programList .divList.slick-current .meet::after {border-bottom-color: #fbac4d;border-left-color: #fbac4d;transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;}
+*/
+
+/* Contents6 */
+.contents6 > div{width:auto;margin:0 20px;padding:38px 0;}
+.btmLink > ul{text-align:center;}
+.btmLink > ul > li{display:inline-block;float:none;}
+
+/* Footer */
+.bannerListW{padding-left:178px;}
+.bannerList > ul > li{width:auto;margin-right:27px;padding-right:27px;}
+#divFooter .banner > div{width:auto;margin:0 20px;}
+.footer > div{width:auto;margin:0 20px;}
+#divFooter .btnTop{display:none;}
+.footerInfo ul li{width:47%;margin-right:14px;}
+
+

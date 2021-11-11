@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bit.lib.dao.MainDAO">
+
+
+
+	<select id="getSearchBook" parameterType="String" resultType="int">
+
+		SELECT count(*) listCnt FROM library.book  
+		where concat(bookTitle,author,type,publisher,pubYear) 
+		like CONCAT('%',#{keyWord},'%')	
+	
+	</select>
+	
+	<select id="searchBook" resultType="book">
+
+		SELECT * FROM library.book 
+		where concat(bookTitle,author,type,publisher,pubYear) 
+		like CONCAT('%',#{keyWord},'%')
+		limit #{startList}, #{listSize}
+		
+	</select>
+	
+	
+	<select id="getMainView" resultType="int">
+
+		SELECT count(*) FROM library.book
+	
+	</select>
+	
+	<select id="mainView" resultType="book">
+
+		SELECT * FROM library.book order by rand() limit 6
+	
+	</select>
+	
+	
+	
+	
+		
+</mapper>

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+#divContentsW{position:relative;font-family:NanumBarunGothic,NanumGothic,san-serif; margin-top:200px;}
+#divContents{position:relative;width:1200px;margin:0 auto;padding-bottom:1300px;}
+/* divContent */
+#divContent{width:1200px;min-height:550px;}
+/* pc~tablet 사이 사이즈 */
+@media screen and (min-width:1025px) and (max-width:1260px) {
+	#divContents{width:auto;margin:0 20px;}
+	#divContent{width:auto;}
+	
+}
+
+/* divTabMenu */
+#divTabMenu{width:1200px;height:40px;margin:40px 0 20px 0;border-bottom:1px solid #7e7e7e;padding:0}
+#divTabMenu p{display:none}
+#divTabMenu > div{height:40px;padding:0;background-color:#fff}
+#divTabMenu ul li{float:left;min-width:113px;height: 39px;margin:0;border:1px solid #d8d8d8;border-left:none;border-bottom:none;background-color:#fff;font-size:16px;line-height:39px;text-align:center;}
+#divTabMenu ul li:first-child{border-left:1px solid #d8d8d8}
+#divTabMenu ul li.selected{border:1px solid #7e7e7e;border-bottom:1px solid #fff;}
+#divTabMenu ul li a{display:block;min-width:65px;padding:0 13px;letter-spacing:-1px;background-color:#f6f6f6;color:#888;font-family:NotoSansKR;font-size:16px;}
+#divTabMenu ul li.selected a{background-color:#fff;color:#333;}
+#divTabMenu > div.long{padding:0 40px;}
+
+/*TabMenu2 */
+#divTabMenu2{height:44px;margin-top:30px;margin-bottom:20px;padding:0;background-color:#fff;border-top:2px solid #c9c9c9;border-bottom:1px solid #c9c9c9;}
+#divTabMenu2 > div{height:44px;background-color:#fff;}
+#divTabMenu2 ul li{float: left; margin:0; border-left:none; border-bottom:none;  font-size:16px; line-height:40px; text-align:center}
+#divTabMenu2.wd ul li{width:109px;}
+#divTabMenu2 ul li a{display: block;height: 42px;padding:0 15px;line-height: 43px; text-align: center; font-size: 15px; color: #6a6a6a;font-family:NotoSansKR;}
+#divTabMenu2 ul li.selected a{height:42px;margin-top:-2px;border-top:2px solid #005490;border-bottom:2px solid #005490;color: #005490;}
+
+/* TabMenu */
+#divTabMenu{width:auto;margin:40px 0 20px;}
+#divTabMenu2 > div{margin:0 40px;}
+#divTabMenu2 ul li.selected a{height:42px;margin-top:0;}
+#divTabMenu2 .mTSWrapper{height:46px;top:-2px;}
+
+/* list */
+.listTable{clear:both;border-top:1px solid #b3b3b3;border-bottom:1px solid #e6e6e6;text-align:center}
+.listTable tr:hover{background-color:#fcf9ce}
+.listTable tr:hover td{background-color:#fcf9ce}
+.listTable th{padding:20px 0;border-bottom:1px solid #e6e6e6}
+.listTable td{padding:14px 10px;border-top:1px solid #e6e6e6}
+.listTable .footable-row-detail-inner{padding:0 20px;text-align:left}
+.listTable tr th{height:40px;padding:10px 8px}
+.listTable .title{text-align:left}
+.textBlue{color:#0077c0}
+
+
+.listTable tr th {padding:10px 10px}
+.listTable tr td {padding:14px 4px}
+.listTable td.checkbox		{width:40px; text-align:center;}
+.listTable td.num			{width:50px; text-align:center;}
+.listTable td.data_type		{width:auto; min-width:100px; text-align:center;}
+.listTable td.list_name		{width:auto; min-width:150px; padding-left:10px;}
+.listTable td.title			{width:auto; text-align:left;}
+.listTable td.update_date	{width:auto; min-width:100x; text-align:center;}

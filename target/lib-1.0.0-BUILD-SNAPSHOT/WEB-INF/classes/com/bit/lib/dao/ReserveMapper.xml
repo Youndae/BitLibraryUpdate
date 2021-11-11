@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bit.lib.dao.ReserveDAO">
+
+<!--  예약시. 예약테이블 입력 및 도서상태 변경 -->
+	<insert id="insertReserve">
+		insert into reserve (id, reserveDate, bookNo)
+			value (#{id}, curdate(), #{bookNo});
+	</insert>
+	
+	<update id="insertReserveup" parameterType="string">
+		update bookstatus
+			set reserveStatus=1 where bookNo=#{bookNo};
+	</update>
+	
+
+	<!--  예약목록 출력 -->
+	<select id="getReserveList"  parameterType="string" resultType="com.bit.lib.dto.ReserveListDTO">
+		select re.bookNo, b.bookTitle, re.reserveDate, 
+			bst.returnDueDate, re.reserveFinDate, 
+			bst.rentStatus
+		from reserve re inner join bookStatus bst 
+			on re.bookNo = bst.bookNo
+ 		inner join book b on bst.bookCode = b.bookCode
+ 			where re.id=#{id};
+	</select>
+	
+	<!--  예약취소시. 예약테이블 삭제 및 도서상태 변경 -->
+	<delete id="reserveCancel" parameterType="string">
+		delete from reserve where bookNo=#{bookNo};
+	</delete>
+	
+	<update id="reserveCancelup" parameterType="string">
+		update bookstatus
+			set reserveStatus=0 where bookNo=#{bookNo};
+	</update>
+	
+	
+
+</mapper>

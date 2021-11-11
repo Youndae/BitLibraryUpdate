@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bit.lib.dao.WishListDAO">
+
+<select id="selectWishList" parameterType="String" resultType="wishListDTO">
+select w.wishListCode, w.bookNo, w.id, b.bookTitle, b.imagePath, 
+bs.bookCode, bs.rentStatus, bs.reserveStatus from wishlist w
+inner join bookStatus bs on w.bookNo=bs.bookNo
+inner join book b on bs.bookCode=b.bookCode
+where w.id=#{id}
+</select>
+
+<insert id="addWishList" parameterType="wishListDTO">
+insert into wishlist (bookNo, id) values (#{bookNo}, #{id})
+</insert>
+
+<delete id="deleteWishList" parameterType="int">
+delete from wishList where wishListCode=#{wishListCode}
+</delete>
+
+
+<insert id="addReserve" parameterType="RentDTO">
+insert into reserve (id, reserveDate, bookNo) values ( #{id} , curDate() , #{bookNo} )
+</insert>
+	
+<update id="updateStatus" parameterType="RentDTO">
+update bookstatus set reserveStatus=1 where bookNo=#{bookNo}
+</update>
+
+
+<insert id="bookRent" parameterType="RentDTO">
+insert into renthistory (bookNo, rentDate, id) values (#{bookNo}, curdate(), #{id});
+</insert>
+	
+<update id="bookstUpdate" parameterType="RentDTO">
+update bookstatus 
+set rentStatus=0, returnDueDate=date_add(curdate(),interval+7 day), reserveStatus=0 where bookNo=#{bookNo};
+</update>
+
+</mapper>

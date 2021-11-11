@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bit.lib.dao.RentDAO">
+
+
+	<select id="getRentHistoryList" parameterType="String"
+		resultType="RentDTO">
+
+		select b.bookTitle, b.author, r.bookNo, r.rentDate,
+		r.returnDate, bs.bookCode
+		from renthistory as r
+		inner join bookstatus as bs 
+		on r.bookNo=bs.bookNo
+		inner join book as b on b.bookcode=bs.bookCode
+		where
+		r.id=#{id} and not r.rentDate is null
+
+	</select>
+
+	<!-- 대여현황 -->
+	<select id="selectRentNow" parameterType="String"
+		resultType="RentDTO">
+		select b.bookTitle, b.author, r.bookNo, r.rentDate,
+		bs.returnDueDate, bs.rentStatus, bs.reserveStatus,
+		DATEDIFF(curdate(),
+		bs.returnDueDate) as datedif
+		from renthistory as r
+		inner join
+		bookstatus as bs 
+		on r.bookNo=bs.bookNo
+		inner join book as b 
+		on b.bookcode=bs.bookCode
+		where not bs.rentstatus=2 and r.id=#{id} and
+		r.returndate is null;
+	</select>
+
+	<!-- 도서연장 -->
+	<update id="renew" parameterType="String">
+		update bookStatus
+		set rentStatus=1 , returnDueDate=date_add(returnDueDate, interval 7 day)
+		where bookNo=#{bookNo}
+	</update>
+
+	<!-- 도서반납 -->
+	<update id="bookReturn" parameterType="String">
+		update renthistory as r
+		inner join bookstatus as bs on r.bookno=bs.bookno
+		set r.returndate=curdate(), bs.rentstatus=2
+		where r.bookno=#{bookno} and r.returndate is null
+	</update>
+
+	<update id="updateReserveFin" parameterType="String">
+		update reserve as rs
+		inner join renthistory as r on r.bookno=rs.bookno
+		set rs.reservefindate=date_add(r.returndate, interval 3 day)
+		where r.bookno=#{bookno}
+	</update>
+	
+	<!-- 
+	<update id="updateReserveFin" parameterType="String">
+		update reserve
+		set reservefindate=date_add(curdate(), interval+3 day)
+		where bookno=#{bookno}
+	</update>
+	 -->
+
+	<!-- 도서 대여 Mapper -->
+	<insert id="bookRent">
+		insert into renthistory (bookNo, rentDate,id) 
+		value (#{bookNo}, curdate(), #{id});
+	</insert>
+
+	<update id="bookstUpdate" parameterType="string">
+		update bookstatus
+		set rentStatus=0, returnDueDate=date_add(curdate(),interval+7 day),
+		reserveStatus=0 where bookNo=#{bookNo};
+	</update>
+
+	<delete id="reserveCancel" parameterType="string">
+		delete from reserve
+		where bookNo=#{bookNo};
+	</delete>
+
+</mapper>
