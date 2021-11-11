@@ -23,22 +23,6 @@ public class ReserveServiceImpl implements ReserveService {
 	}
 
 	@Override
-	public void insertReserve( String id, List<String> chknos) {
-		// TODO Auto-generated method stub
-		String bookNo = chknos.get(0).toString();
-		System.out.println(bookNo+"////"+id+"reserv");
-		reserveDao.insertReserve(id, bookNo);
-	}
-
-	@Override
-	public void insertReserveup(List<String> chknos) {
-		// TODO Auto-generated method stub
-		String bookNo=chknos.get(0).toString();
-		System.out.println(bookNo+"insert up");
-		reserveDao.insertReserveup(bookNo);
-	}
-
-	@Override
 	public void reserveCancel(List<String> bookNo) {
 		// TODO Auto-generated method stub
 

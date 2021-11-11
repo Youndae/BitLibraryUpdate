@@ -157,16 +157,13 @@ table {
 						if (this.value != "2") { //대여불가
 							alert("대여가 불가능합니다.")
 						} else {
-							var no = new Array;
-								no.push($(this).attr("data-bookNo")); //체크된 것의 data-bookNo 값을 뽑아서 배열에 넣기
-
-							 //선택된 것이 있으면 controller로 값 넘겨주기
+							var bookNo = $(this).attr("data-bookNo");
 
 								$.ajaxSettings.traditional = true;
 								$.ajax({
 									url : "/rent.do",
 									type : "post",
-									data : {chknos : no},
+									data : {bookNo : bookNo},
 									success : function(data) {
 										alert('선택하신 도서가 대여되었습니다!');
 										location.reload();
@@ -176,13 +173,12 @@ table {
 										alert("code:" + request.status + "\n"
 												+ "message : " + request.responseText
 												+ "\n" + "error : " +error);
-
 									},
 								});
 						}
-			});
+					});
 				
-		};
+				};
 			}
 		});
 	</script>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.bit.lib.dao.ReserveDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,17 +25,20 @@ public class ReserveController {
 	@Autowired
 	private BookDetailService bookDetailService;
 
-	// 도서 예약
+	@Autowired(required = false)
+	private ReserveDAO reserveDAO;
 
+	// 도서 예약
 	@RequestMapping(value = "/reserve.do", method=RequestMethod.POST)
 	@ResponseBody
-	public void insertReserve(@RequestParam List<String> chknos, HttpSession session) {
+	public void insertReserve(@RequestParam String bookNo, HttpSession session) {
 		String id = (String) session.getAttribute("id");
+
 		System.out.println(id);
-		System.out.println(chknos+"예약"+id);
-		reserveService.insertReserve(id, chknos);
+		System.out.println(bookNo+"예약"+id);
+		reserveDAO.insertReserve(id, bookNo);
 		System.out.println("insert Ok");
-		reserveService.insertReserveup(chknos);
+		reserveDAO.insertReserveup(bookNo);
 
 		System.out.println("reserve ok");
 

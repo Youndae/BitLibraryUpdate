@@ -186,16 +186,14 @@ table{
 					 if ($(this).attr("data-reservest") != "0") {
 						alert("예약도서는 대여가 불가능합니다.")
 					}else{ 
-					var no = new Array;
-						no.push($(this).attr("data-bookNo")); //체크된 것의 data-bookNo 값을 뽑아서 배열에 넣기
-					
-					 //선택된 것이 있으면 controller로 값 넘겨주기
+
+						var bookNo = $(this).attr("data-bookNo");
 
 						$.ajaxSettings.traditional = true;
 						$.ajax({
 							url : "/rent.do",
 							type : "post",
-							data : {chknos : no},
+							data : {bookNo : bookNo},
 							success : function(data) {
 								alert('선택하신 도서가 대여되었습니다!');
 								location.reload();
@@ -220,7 +218,6 @@ table{
 			if (count == 0) { //아무것도 선택된 것이 없을때 alert 띄워주기
 				alert("선택된 도서가 없습니다.")
 			}
-			
 			$("input[name=check]:checked").each(function() {
 				if ($(this).attr("data-reservest") != "0") { //예약불가
 					alert("예약이 불가능합니다.") 
@@ -229,13 +226,12 @@ table{
 						alert("예약이 불가능합니다.")
 					} else {
 					var no = new Array;
-					no.push($(this).attr("data-bookNo")); //체크된 것의 data-bookNo 값을 뽑아서 배열에 넣기
-					//선택된 것이 있으면 controller로 값 넘겨주기
+						var bookNo = $(this).attr("data-bookNo");
 							$.ajaxSettings.traditional = true;
 							$.ajax({
 								url : "/reserve.do",
 								type : "post",
-								data : {chknos : no},
+								data : {bookNo : bookNo},
 								success : function(data) {
 									alert('선택하신 도서가 예약되었습니다!');
 									location.reload();

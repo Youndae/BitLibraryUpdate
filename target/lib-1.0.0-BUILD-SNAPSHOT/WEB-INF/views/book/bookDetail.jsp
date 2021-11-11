@@ -52,10 +52,10 @@ table{
 				<div class="searchLink">
 					<form name="frmMylist" action="/mylist/writeitem" method="post"/>
 					 <ul class="searchLinkBtn">
-						<button id="button" type="button" class="rent">대여</button>
+						<button type="button" class="rent">대여</button>
 						<input type="hidden" id="historycount" value="${history}"/>
-						<button id="button" type="button" class="wish">위시리스트</button>
-						<button id="button" type="button" class="reserve">예약</button>
+						<button type="button" class="wish">위시리스트</button>
+						<button type="button" class="reserve">예약</button>
 
 					 </ul>
 					  <div class="profile">
@@ -186,8 +186,8 @@ table{
 					 if ($(this).attr("data-reservest") != "0") {
 						alert("예약도서는 대여가 불가능합니다.")
 					}else{ 
-					var no = new Array;
-						no.push($(this).attr("data-bookNo")); //체크된 것의 data-bookNo 값을 뽑아서 배열에 넣기
+
+						var bookNo = $(this).attr("data-bookNo"); //체크된 것의 data-bookNo 값을 뽑아서 배열에 넣기
 					
 					 //선택된 것이 있으면 controller로 값 넘겨주기
 
@@ -195,7 +195,7 @@ table{
 						$.ajax({
 							url : "/rent.do",
 							type : "post",
-							data : {chknos : no},
+							data : {bookNo : bookNo},
 							success : function(data) {
 								alert('선택하신 도서가 대여되었습니다!');
 								location.reload();

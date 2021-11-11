@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.bit.lib.dao.RentDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,9 @@ public class Rentcontroller {
 
 	@Autowired
 	private RentService rentService;
+
+	@Autowired(required = false)
+	private RentDAO rentDAO;
 
 
 	@RequestMapping(value = "rentHistory.do", method = RequestMethod.GET)
@@ -40,17 +44,17 @@ public class Rentcontroller {
 
 	@RequestMapping(value = "/rent.do", method = RequestMethod.POST)
 	@ResponseBody
-	public void bookRent(@RequestParam List<String> chknos, HttpSession session) {
-		String id = (String) session.getAttribute("id");
-		System.out.println(chknos + "///" + id);
+	public void bookRent(@RequestParam String bookNo, HttpSession session) {
 
-		rentService.bookRent(chknos, id);
+		String id = (String) session.getAttribute("id");
+		System.out.println(bookNo + "///" + id);
+
+		rentDAO.bookRent(bookNo, id);
 		System.out.println("Rent Ok");
-		rentService.bookstUpdate(chknos);
+		rentDAO.bookstUpdate(bookNo);
 		System.out.println("up Ok");
-		rentService.reserveCancel(chknos);
+		rentDAO.reserveCancel(bookNo);
 		System.out.println("delete Ok");
-		
 
 	}
 
