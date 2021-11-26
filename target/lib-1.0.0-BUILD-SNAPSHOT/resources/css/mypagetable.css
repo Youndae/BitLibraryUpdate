@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 .mobileTable.breakpoint > tbody > tr > td.expand {
 	padding:14px 23px 14px 10px;
 	background:url(../../../../image/ko/solution/common/ico/tableOn.png) no-repeat 97% 50%

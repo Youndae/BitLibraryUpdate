@@ -10,9 +10,11 @@
 
 /* table */
 table{
-	width:100%;
+	/*width:100%;*/
 	border:none;
 	border-collapse:collapse;
+	width: 750px;
+	height: 5px;
 }
 table th{
 	border:none;
@@ -21,6 +23,21 @@ table th{
 }
 table td{
 	border:none
+}
+
+#button{
+	margin: -1px;
+	border: 1px solid rgba(0, 155, 255, 0.9);
+	background-color: rgba(0, 0, 0, 0);
+	color: rgba(0, 155, 255, 0.9);
+	padding: 3px;
+	border-radius: 5px;
+	font-size: 24px;
+}
+
+#button:hover{
+	color: white;
+	background-color: skyblue;
 }
 
 /* list */
@@ -637,3 +654,5 @@ dl.service .serviceIco {position:relative;top:-1px;display:inline-block;margin-r
 /* 소장처별 묶음처리 경계선 */
 .listTable td{border-top:1px dashed #e6e6e6}
 .listTable tr.first td{border-top:3px double #e6e6e6}
+
+
